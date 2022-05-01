@@ -1,0 +1,312 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(104, 97, 97);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+body header {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  background: rgb(224, 91, 91);
+  padding: 5%;
+}
+body header .logo {
+  width: 30%;
+}
+body header .logged {
+  width: 20%;
+  text-align: end;
+  color: rgb(124, 115, 115);
+}
+
+.sigIn {
+  text-align: center;
+}
+
+.userlog {
+  margin: 3%;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  color: rgb(185, 169, 169);
+}
+
+form {
+  text-align: start;
+  width: 90%;
+  margin: 2% 30%;
+}
+
+label {
+  margin: 4%;
+}
+
+.formlist {
+  display: grid;
+  grid-template-columns: 23% 20%;
+  align-items: baseline;
+}
+
+input[type=text] {
+  height: 80%;
+}
+
+.guitarList {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  align-items: baseline;
+  margin: 5%;
+  gap: 2%;
+}
+@media screen and (max-width: 900px) {
+  .guitarList {
+    grid-template-columns: 40% 40%;
+    margin: 1%;
+  }
+}
+.guitarList .listHeader {
+  font-size: 1.2rem;
+}
+@media screen and (max-width: 900px) {
+  .guitarList .listHeader {
+    font-size: 1rem;
+  }
+}
+.guitarList h6 {
+  margin: 2%;
+  font-size: 1rem;
+}
+.guitarList .guitarListContainer {
+  display: grid;
+  grid-template-rows: 24% 60% 9% 13%;
+  align-items: baseline;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  width: 77%;
+  margin: 7%;
+  padding: 4%;
+  height: 103%;
+  box-shadow: 10ox 10ox 10px grey;
+}
+@media screen and (max-width: 900px) {
+  .guitarList .guitarListContainer {
+    grid-template-rows: 20% 47% 9% 13%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .guitarList .guitarListContainer {
+    grid-template-rows: 31% 51% 9% 13%;
+  }
+}
+.guitarList .guitarListContainer .findMore {
+  padding: 1%;
+  margin: 4% 2% 0 44%;
+  width: 58%;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(188, 197, 204);
+  color: rgb(82, 73, 73);
+}
+@media screen and (max-width: 900px) {
+  .guitarList .guitarListContainer .findMore {
+    font-size: 0.8rem;
+  }
+}
+.guitarList .guitarListContainer .findMore:hover {
+  background: rgb(224, 91, 91);
+  color: rgb(223, 203, 203);
+}
+
+.prodDetail {
+  width: 80%;
+  margin: 10%;
+  line-height: 1.5rem;
+}
+.prodDetail ul {
+  list-style: none;
+  margin: 1%;
+}
+.prodDetail h2, .prodDetail h3 {
+  margin: 2% 0;
+}
+.prodDetail figure {
+  width: 70%;
+  margin: 4% 0;
+}
+.prodDetail img {
+  width: 100%;
+}
+.prodDetail h5 {
+  line-height: 1rem;
+  width: 80%;
+  margin-bottom: 3%;
+}
+
+.buttonBack, .buyNow {
+  padding: 3%;
+  margin: 3% 30%;
+  width: 40%;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(188, 197, 204);
+  color: #524949;
+}
+.buttonBack:hover, .buyNow:hover {
+  background: rgb(224, 91, 91);
+  color: rgb(223, 203, 203);
+}
+
+.heading {
+  background: rgb(59, 56, 56);
+  color: #fff;
+  padding: 3%;
+  text-align: center;
+}
+
+.manage {
+  width: 90%;
+  margin: 2% auto;
+  display: flex;
+  gap: 4%;
+}
+.manage article {
+  width: 40%;
+  border: 3px solid rgb(43, 41, 41);
+  border-radius: 5px;
+  padding: 2%;
+  background: wheat;
+}
+.manage article h2 {
+  text-align: center;
+  margin-bottom: 6%;
+}
+.manage article h4 {
+  margin-bottom: 4%;
+}
+
+.buyNow {
+  width: 10%;
+  padding: 1%;
+  margin: 2% 0;
+  background-color: rgb(235, 158, 139);
+}
+
+.addToList {
+  padding: 3%;
+  margin: 10% 30%;
+  width: 136%;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(188, 197, 204);
+  color: #524949;
+}
+.addToList:hover {
+  background: rgb(224, 91, 91);
+  color: rgb(223, 203, 203);
+}
+
+.guitarListImg {
+  width: 220px;
+  height: 180px;
+  border-radius: 10px;
+  box-shadow: 2px 2px;
+}
+@media screen and (max-width: 1200px) {
+  .guitarListImg {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .guitarListImg {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.addDelete {
+  display: flex;
+  justify-content: space-between;
+}
+.addDelete .icon {
+  font-size: 2rem;
+}
+.addDelete .addproductSection {
+  padding: 3%;
+  width: 45%;
+  margin: 2%;
+  background: rgb(235, 144, 80);
+  border-radius: 5px;
+}
+.addDelete .addproductSection form {
+  margin: 5% 0;
+  width: 178%;
+}
+.addDelete .deleteList {
+  margin: 2% 10%;
+  background: tomato;
+  padding: 3%;
+  border-radius: 5px;
+  width: 50%;
+  line-height: 1.7rem;
+  cursor: pointer;
+}
+.addDelete .deleteList .action {
+  font-style: italic;
+  text-decoration: underline;
+}
+.addDelete .deleteList h4 {
+  margin: 3% 0;
+}
+.addDelete .deleteList p:hover {
+  color: rgb(216, 42, 42);
+}
+
+.hidden {
+  display: none;
+}
+
+.registration, .login {
+  text-align: center;
+  margin: 3%;
+}
+.registration .addToList, .login .addToList {
+  width: 40%;
+  margin: 0 0 0 147%;
+}
+.registration .formlist, .login .formlist {
+  width: 80%;
+}
+.registration .error-message, .registration .success-message, .login .error-message, .login .success-message {
+  background: tomato;
+  width: 30%;
+  padding: 2%;
+  margin: 0% auto;
+  border-radius: 5px;
+}
+.registration .success-message, .login .success-message {
+  background: wheat;
+}
+.registration h4, .login h4 {
+  margin: 4%;
+  background: wheat;
+  width: 30%;
+  margin: 0 auto;
+  padding: 2%;
+  border-radius: 5px;
+}
+.registration h4:hover, .login h4:hover {
+  color: grey;
+  cursor: pointer;
+}/*# sourceMappingURL=main.css.map */
