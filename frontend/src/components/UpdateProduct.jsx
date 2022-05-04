@@ -22,6 +22,7 @@ const UpdateProduct = () => {
         <section className="update">
             <article>
                 <h2>List of all Guitars</h2>
+                <h4>Click on the item to be updated</h4>
                 {products && products.map(product =>
                     <h5 key={product._id}><Link to={"/updateForm/" + product._id}>{product.title}, {product.category}</Link></h5>)}
             </article>

@@ -349,12 +349,11 @@ input[type=text] {
 }
 
 .update {
-  margin: 3%;
-  line-height: 1.2rem;
-  display: flex;
-  justify-content: space-between;
+  margin: 5%;
+  font-size: larger;
+  line-height: 1.5rem;
 }
-.update h2 {
+.update h2, .update h4 {
   margin: 2% 0;
 }
 

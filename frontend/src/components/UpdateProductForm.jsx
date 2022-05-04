@@ -45,11 +45,12 @@ const UpdateProductForm = () => {
             'price': price,
             "sold": sold,
             "stock": stock,
+
             "variations": [variations]
         }
         console.log(updateObj);
 
-        fetch(apiBaseUrl + "api/products/update", {
+        fetch(apiBaseUrl + "/api/products/update", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -117,10 +118,10 @@ const UpdateProductForm = () => {
                     <input type="text" value={price} name="price" onChange={(e) => setPrice(e.target.value)} placeholder={prodDetail.price} />
 
                     <label htmlFor="sold">Change Sold Articles</label>
-                    <input type="number" value={sold} name="sold" onChange={(e) => setSold(e.target.value)} placeholder={prodDetail.sold} />
+                    <input type="number" value={sold} name="sold" onChange={(e) => setSold(Number(e.target.value))} placeholder={prodDetail.sold} />
 
                     <label htmlFor="stock">Change Items in Stock</label>
-                    <input type="number" value={stock} name="stock" onChange={(e) => setStock(e.target.value)} placeholder={prodDetail.stock} />
+                    <input type="number" value={stock} name="stock" onChange={(e) => setStock(Number(e.target.value))} placeholder={prodDetail.stock} />
 
                     <label>Change Color </label>
                     <select value={variations} onChange={(e) => { setVariations(e.target.value) }}>
