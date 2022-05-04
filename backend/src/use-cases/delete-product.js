@@ -18,16 +18,6 @@ async function deleteProduct(productWithId) {
 
 }
 
-// async function buyProduct(myProductwithId) {
-//     const foundProduct = await findById(myProductwithId.productId)  ///.id aus parameter oben
-//     if (!foundProduct) {
-//         throw ({ message: "Product with Id " + myProductwithId.productId + " not found." })
-//     }
-//     const product = makeProduct(foundProduct)
-//     console.log(product)
-//     const updatedProduct = await buyOne(product._id)
-
-//     return updatedProduct
 
 module.exports = {
     deleteProduct

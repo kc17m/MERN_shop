@@ -36,12 +36,13 @@ async function deleteOneProduct(id) {
 /// ##### ////
 
 ///####/// update product - funktioniert nicht!!!
-async function updateOneProduct(id) { ///siehe "id" unten als Variable
+async function updateOneProduct(id, updateInfo) { ///siehe "id" unten als Variable
     const db = await getDB()
     console.log("id in updateOneProduct:", id)
+    //  console.log("updated Product:" price);
     const result = await db.collection("guitars").updateOne(
         { _id: id },
-        { $set: title, category, description, image, price, stock, variations, sold }
+        { $set: updateInfo }//{ title: "YAMAHA Pacifica 311H", stock: 21 } } ///
     )
     return result
 }

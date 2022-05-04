@@ -5,9 +5,16 @@ import { useEffect, useState } from "react";
 import AddProductForm from "./AddProductform";
 import Header from "./Header"
 import DeleteProduct from "./DeleteProduct";
+import Footer from "./Footer";
+import { useNavigate, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-const AddProduct = () => {
+const ManageProducts = (props) => {
 
+
+    // const [header, setHeader] = useState("")
+
+    console.log("Token management: ", props.token)
     const [guitars, setGuitars] = useState([])
 
     const [title, setTitle] = useState("");
@@ -26,13 +33,15 @@ const AddProduct = () => {
         fetch(apiBaseUrl + "/api/products/all")
             .then(response => response.json())
             .then(productsData => setGuitars(productsData))
+        // setHeader("You are currently logged in")
         console.log(guitars)
-    }, [])
+    }, [title])
 
+    if (!props.token) {
+        return <Navigate to="/signIn" />
+    } else return (<div>
+        <Header title="Management Dashboard" token={props.token} />
 
-
-    return (<div>
-        <Header />
         <h1 className="heading" >MANAGEMENT DASHBOARD - Top 5 Articles</h1>
         <section className="dashboard">
             <Dashboard guitars={guitars} />
@@ -52,11 +61,12 @@ const AddProduct = () => {
 
                 error={error} setError={setError} />
             <DeleteProduct guitars={guitars} setGuitars={setGuitars} />
-
         </section>
+        <section className="updateLink"><h3 >Need to update your selection? </h3><Link to='/update'><button>Click here</button></Link></section>
 
         <BackButton />
+        <Footer />
     </div >);
 }
 
-export default AddProduct;
+export default ManageProducts;

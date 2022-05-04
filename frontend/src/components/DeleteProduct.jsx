@@ -13,11 +13,7 @@ const DeleteProduct = (props) => {
         })
             .then(response => response.json())
             .then((event.target.classList.add("hidden")))
-
-
     }
-
-
 
     return (<div className="deleteList" >
         <h2>WANT TO REMOVE ITEMS FROM STOCK? </h2><h4>CLICK ARTICLES BELOW TO DELETE <span className="icon">↓</span></h4>

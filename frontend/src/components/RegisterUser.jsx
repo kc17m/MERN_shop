@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { apiBaseUrl } from "../api";
 import Header from "./Header";
 import BackButton from "./BackButton";
+import Footer from "./Footer";
 
-const RegisterUser = () => {
+const RegisterUser = (props) => {
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -12,6 +13,8 @@ const RegisterUser = () => {
     const [passwordConfirm, setPasswordConfirm] = useState("")
     const [error, setError] = useState("")
     const [success, setSuccess] = useState("")
+
+    console.log("Register ", props.token);
 
     async function handleRegister(e) {
         e.preventDefault()
@@ -59,7 +62,7 @@ const RegisterUser = () => {
 
 
     return (<>
-        <Header />
+        <Header title="Registration" />
         <section className="registration">
 
             <h2>REGISTER USER</h2>
@@ -83,13 +86,18 @@ const RegisterUser = () => {
             </form >
             <article>
                 {error && <p className="error-message">{error}</p>}
+                {success && <p className="success-message"><Link to="/singIn">{success}</Link></p>}
 
-                <Link to="/signIn">{success && <p className="success-message">{success}</p>}<h4>Click here</h4></Link>
+                <h4 style={{ textAlign: "center" }} >You already have an account? <Link to='/signIn'><span style={{ textAlign: "center", textDecoration: "underline" }}>Click here to log in</span></Link> </h4>
+
+
             </article>
 
             <BackButton />
 
         </section>
+        <Footer />
+
 
 
     </>);

@@ -1,8 +1,9 @@
-
+import { useNavigate, Navigate } from "react-router-dom";
 
 const Dashboard = (props) => {
     props.guitars &&
         console.log(props.guitars)
+    console.log(props.token);
 
 
     return (

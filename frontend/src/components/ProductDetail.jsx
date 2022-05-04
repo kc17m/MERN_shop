@@ -3,11 +3,11 @@ import { useParams } from "react-router-dom"
 import { apiBaseUrl } from "../api";
 import BackButton from "./BackButton";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const ProductDetail = () => {
 
     const [prodDetail, setProdDetail] = useState();
-
     const { productId } = useParams()
 
     useEffect(() => {
@@ -17,7 +17,6 @@ const ProductDetail = () => {
                 if (!productData.err) {
                     setProdDetail(productData)
                     console.log(productData)
-
                 }
             })
     }, [productId])
@@ -44,10 +43,9 @@ const ProductDetail = () => {
     if (prodDetail) return (
 
         <div>
-            <Header />
+            <Header title="Your selected Guitar" />
             <div className="prodDetail" >
 
-                <h2>TEST product detail</h2>
                 <h2>{prodDetail.title}</h2>
                 {prodDetail.category && <h4>Category: {prodDetail.category.toUpperCase()}</h4>}
                 <figure><img src={prodDetail.image} alt="guitar" /></figure>
@@ -61,7 +59,11 @@ const ProductDetail = () => {
                 <button className="buyNow" onClick={handleBuy}>BUY NOW</button>
                 <BackButton />
                 <h3 className="show hidden">Congratulations! {prodDetail.title} will be shipped to your location soon - Enjoy!</h3>
+
             </div >
+            <Footer />
+
+
         </div>)
     else return <h1>Guitar not available</h1>
 

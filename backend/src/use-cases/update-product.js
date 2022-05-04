@@ -1,14 +1,16 @@
 const { updateOneProduct, findById } = require("../db-access/products.dao")
 const { makeProduct } = require("../domain/Product")
 
-async function updateProduct(productwithId) {
-    const foundProduct = await findById(productwithId.productId)  ///.id aus parameter oben
+//{} unten: Objekt mit zwei Werten: 
+async function updateProduct({ productId, ...restProduct }) {
+    const foundProduct = await findById(productId)  ///.id aus parameter oben
     if (!foundProduct) {
-        throw ({ message: "Product with Id " + myProductwithId.productId + " not found." })
+        throw ({ message: "Product with Id " + productId + " not found." })
     }
     const product = makeProduct(foundProduct)
-    console.log(product)
-    const updatedProduct = await updateOneProduct(product._id)
+    console.log("USE CASE: product: ", product)
+    const updatedProduct = await updateOneProduct(product._id, restProduct)
+    console.log("updated Product aus use case:", updatedProduct);
 
     return updatedProduct
 }

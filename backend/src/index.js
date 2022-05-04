@@ -63,23 +63,6 @@ app.post("/api/products/add", (req, res) => {
 })
 //Thunder TESTED - works!!
 
-
-// app.post("/api/orders/addProductsToOrder", (req, res) => {
-//     const handleError = error => res.status(500).json({ err: error.message || "Unknown error while adding product to user Order." })
-//     try {
-//         const orderId = req.body.orderId
-//         const productId = req.body.productId
-
-//         addProducttoOrder({ orderId, productId })
-//             .then(_ => res.status(201).end())
-//             .catch(handleError)
-//     } catch (err) {
-//         handleError(err)
-//     }
-// }) ///NOT YET TESTED !!!
-
-////######//////
-
 app.put("/api/products/buy", async (req, res) => {
     try {
         const updatedProduct = req.body
@@ -98,21 +81,6 @@ app.put("/api/products/buy", async (req, res) => {
 
 ///#####//// DELETE ##### /////
 
-// app.delete("/api/products/delete", async (req, res) => {
-//     try {
-//         const deletedProd = req.body
-//         const productId = deletedProd.productId
-//         console.log("OK Index.js: delete: productId: ", productId)
-//         console.log("OK Index.js: delete id as object: ", { productId })
-//         const productToDelete = await deleteProduct({ productId })
-//         console.log("Index.js - productToDelete", productToDelete)
-
-//         res.json({ productToDelete })
-//         console.log("Index.js: DELETE: res.json product obj", { productToDelete })
-//     } catch (error) {
-//         res.status(500).json({ err: error.message || "Unknown error deleting product." })
-//     }
-// })
 app.delete("/api/products/delete/:id", async (req, res) => {
     try {
         const deletedProd = req.body
@@ -146,6 +114,8 @@ app.post("/api/users/register", async (req, res) => {
 })
 //### WORKS IN THUNDER CLIENT ####///
 
+//### LOGIN ###///
+
 app.post("/api/users/login", async (req, res) => {
     try {
         const email = req.body.email // data from user input
@@ -164,6 +134,31 @@ app.post("/api/users/login", async (req, res) => {
     }
 })
 
+//### WORKS IN THUNDER CLIENT ####///
+
+
+
+// ### UPDATE PROD ### ///
+
+app.put("/api/products/update", async (req, res) => {
+    try {
+        const updatedProduct = req.body
+        console.log("INDEX JS product id as object:", updatedProduct)
+        const product = await updateProduct(updatedProduct)
+
+        res.json({ product })
+        console.log("INDEX JS: res.json product obj", { product })
+    } catch (error) {
+        res.status(500).json({ err: error.message || "Unknown error while updating product." })
+    }
+})
+
+
+
+///Works in Thunder client ####////
+
+//// ROUTES TO BE COMPLETED ////
+
 app.get("/api/users/userInfo", doAuthMiddleware, async (req, res) => {
     try {
         const userId = req.userClaims.sub // req.body.userId
@@ -173,25 +168,6 @@ app.get("/api/users/userInfo", doAuthMiddleware, async (req, res) => {
     } catch (error) {
         console.log(error)
         res.status(500).json({ err: error.message || "Unknown error while getting your user info." })
-    }
-})
-
-
-//// ROUTES TO BE COMPLETED ////
-
-
-app.put("/api/products/update", async (req, res) => {
-    try {
-        const updatedProduct = req.body
-        const productId = updatedProduct.productId  //productid muss in json aus Frontend der übergebenen id entsprechen
-        console.log("product id TEST", productId)
-        console.log("product id as object", { productId }.productId)
-        const product = await updateProduct({ productId })
-
-        res.json({ product })
-        console.log("aus index: res.json product obj", { product })
-    } catch (error) {
-        res.status(500).json({ err: error.message || "Unknown error while buying product." })
     }
 })
 

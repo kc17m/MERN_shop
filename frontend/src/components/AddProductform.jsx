@@ -21,7 +21,8 @@ const AddProductForm = (props) => {
         fetch(apiBaseUrl + "/api/products/add", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+
             },
             body: JSON.stringify(postObj)
         })

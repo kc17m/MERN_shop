@@ -21,10 +21,38 @@ body {
         .logged {
             width: 20%;
             text-align: end;
-            color:rgb(124, 115, 115)
-        }   
+            color:rgb(241, 236, 236)
+        }
+        .notLogged {
+            width: 15%;
+            text-align: center;
+            // border: 1px solid black;
+            // border-radius: 5px;
+            // padding: 1%;
+            color:rgb(241, 236, 236)
+        } 
+        .optional-title{
+            color:rgb(43, 41, 41);       
+        }  
+        h4 {
+            margin: 0 0 3% 0;
+        }
     }
 }
+footer {
+    margin: 10% 0% 0 0%;
+    padding: 2% 5% 0 5%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: rgb(224, 91, 91);
+}
+.magpie {
+    width: 5%;
+    margin: 3%;
+    
+}
+
 .sigIn {
     text-align: center;
 }
@@ -66,7 +94,7 @@ height: 80%;
     display: grid;
     grid-template-columns: 30% 30% 30%;
     align-items: baseline;
-    margin: 5%;
+    margin: 5% 5% 37% 5%;
     gap: 2%;
     @media screen and (max-width: 900px){
         grid-template-columns: 40% 40%;
@@ -141,7 +169,7 @@ height: 80%;
         margin: 2% 0;
     }
     figure {
-        width: 70%;
+        width: 600px;
         margin: 4% 0;
     }
 
@@ -239,6 +267,18 @@ height: 80%;
     }
 }
 
+.updateLink {
+    text-align: center;
+    button {
+         width: 20%;
+         margin: 2%;
+         padding: 1%;
+         border-radius: 5px;
+         &:hover {
+             background: rgb(196, 126, 114);
+         }
+        }
+}
 
 .addDelete {
     display: flex;
@@ -284,9 +324,11 @@ height: 80%;
     display: none;
 }
 
-.registration, .login {
+
+
+.registration, .signIn {
     text-align: center;
-    margin: 3%;
+    margin: 3% 3% 8% 3%;;
     .addToList {
         width: 40%;
         margin: 0 0 0 147%;
@@ -294,7 +336,7 @@ height: 80%;
     .formlist {
         width: 80%;
     }
-    .error-message, .success-message {
+    .error-message {
         background: tomato;
         width: 30%;
         padding: 2%;
@@ -303,21 +345,44 @@ height: 80%;
     }
     .success-message {
         background: wheat;
-
+        width: 30%;
+        padding: 2%;
+        margin: 0% auto;
+        border-radius: 5px;
+    
     }
+    
     h4 {
         margin: 4%;
-        background: wheat;
+       // background: wheat;
         width: 30%;
         margin: 0 auto;
         padding: 2%;
         border-radius: 5px;
 
-        &:hover {
-            color: grey;
-            cursor: pointer;
-            
-        }
-    }
-    
+        }    
 }
+
+.update {
+    h2 {
+        margin: 2% 0;
+    }
+    margin: 3%;
+    line-height: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.prodUpdate {
+    .buyNow {
+        margin: 10%;
+        width: 100%;
+        padding: 3%;
+    }
+    .formlist {
+        width: 147%;
+        margin: 2%;
+        grid-template-columns: 16% 47%;
+    }
+}
+

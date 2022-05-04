@@ -13,9 +13,6 @@ async function registerUser(userInfo) {
 }
 
 
-
-
-
 ///#### zum Vergleich - function as promise: 
 
 // function registerUser(userInfo) {
